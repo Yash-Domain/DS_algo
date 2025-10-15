@@ -9,14 +9,17 @@ class Solution {
                 st.push(s[i]);
             }
             else{
-                if(st.top=='(' && s[i]==')'
-                || st.top=='{' && s[i]=='}'
-                || st.top=='[' && s[i]==']' ){
+                if(st.empty()) return false;
+                if(st.top()=='(' && s[i]==')'
+                || st.top()=='{' && s[i]=='}'
+                || st.top()=='[' && s[i]==']' ){
                     st.pop();
-                   
+                }
+                else{
+                    return false;
                 }
             }
         }
-        return st.size == 0 ;
+        return st.size() == 0 ;
     }
 };
