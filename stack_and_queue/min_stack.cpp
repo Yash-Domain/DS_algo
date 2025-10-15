@@ -3,7 +3,7 @@ public:
 
     stack<pair<int,int>> st;
     MinStack() {
-        
+        // domain 
     }
     
     void push(int val) {
