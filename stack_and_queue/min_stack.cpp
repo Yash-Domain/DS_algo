@@ -3,15 +3,16 @@ public:
 
     stack<pair<int,int>> st;
     MinStack() {
-        // domain 
+        // 
     }
     
     void push(int val) {
         if(st.empty()){
             st.push({val,val});
-        }
-        int mini = min(val,st.top())
+        }else{
+        int mini = min(val,st.top().second)
         st.push({val,mini};)
+        }
     }
     
     void pop() {
