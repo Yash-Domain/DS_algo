@@ -1,0 +1,20 @@
+class Solution {
+  public:
+    int minCost(vector<int>& arr) {
+         int totalCost = 0;
+        
+        priority_queue<int,vector<int>,greater<int>> pq(arr.begin(),arr.end());
+        
+        while(pq.size() > 1){
+            
+            int first = pq.top(); pq.pop();
+            int second = pq.top(); pq.pop();
+            
+            int sum = first + second;
+            totalCost += sum;
+            pq.push(sum);
+            
+        }
+        return totalCost;
+    }
+};
