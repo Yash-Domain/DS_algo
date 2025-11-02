@@ -2,6 +2,7 @@
     "files.associations": {
         "iostream": "cpp",
         "format": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xiosbase": "cpp"
     }
 }
