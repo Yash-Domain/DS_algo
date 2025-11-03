@@ -3,6 +3,8 @@
         "iostream": "cpp",
         "format": "cpp",
         "xstring": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "xlocinfo": "cpp",
+        "xutility": "cpp"
     }
 }
