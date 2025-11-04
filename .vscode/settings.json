@@ -5,6 +5,8 @@
         "xstring": "cpp",
         "xiosbase": "cpp",
         "xlocinfo": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "ios": "cpp",
+        "count_nodes_cbt": "cpp"
     }
 }
