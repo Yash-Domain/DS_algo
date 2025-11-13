@@ -7,6 +7,8 @@
         "xlocinfo": "cpp",
         "xutility": "cpp",
         "ios": "cpp",
-        "count_nodes_cbt": "cpp"
+        "count_nodes_cbt": "cpp",
+        "utility": "cpp",
+        "compare": "cpp"
     }
 }
