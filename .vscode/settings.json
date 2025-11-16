@@ -9,6 +9,7 @@
         "ios": "cpp",
         "count_nodes_cbt": "cpp",
         "utility": "cpp",
-        "compare": "cpp"
+        "compare": "cpp",
+        "vector": "cpp"
     }
 }
