@@ -10,6 +10,8 @@
         "count_nodes_cbt": "cpp",
         "utility": "cpp",
         "compare": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp"
     }
 }
