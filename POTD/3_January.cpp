@@ -1,61 +1,41 @@
 // brute 
 class Solution {
 public:
-    int cnt = 0;
-    int const mod = 1e9 + 7;
-    vector<vector<int>> dr = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+    int mod = 1e9 + 7;
+    long long cnt = 0;
 
-    void dfs(int r, int c, vector<vector<int>>& grid) {
-        int n = grid.size();
-
-        if (r == n - 1 && c == 2) {
+    void dfs(int row, int col, int n, vector<vector<int>>& grid) {
+        // finished entire grid
+        if (row == n) {
             cnt = (cnt + 1) % mod;
+            return;
         }
 
-        int prev_color = grid[r][c];
+        // move to next row
+        if (col == 3) {
+            dfs(row + 1, 0, n, grid);
+            return;
+        }
 
-        for (int i = 0; i < 4; i++) {
-            int nrow = r + dr[i][0];
-            int ncol = c + dr[i][1];
+        for (int color = 0; color < 3; color++) {
+            // check left
+            if (col > 0 && grid[row][col - 1] == color) continue;
+            // check up
+            if (row > 0 && grid[row - 1][col] == color) continue;
 
-            if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < 3) {
-                if (grid[nrow][ncol] == -1) {
-                    if (prev_color == 0) {
-                        grid[nrow][ncol] = 1;
-                        dfs(nrow, ncol, grid);
-
-                        grid[nrow][ncol] = 2;
-                        dfs(nrow, ncol, grid);
-
-                    } else if (prev_color == 1) {
-                        grid[nrow][ncol] = 0;
-                        dfs(nrow, ncol, grid);
-
-                        grid[nrow][ncol] = 2;
-                        dfs(nrow, ncol, grid);
-                    } else {
-                        grid[nrow][ncol] = 0;
-                        dfs(nrow, ncol, grid);
-
-                        grid[nrow][ncol] = 1;
-                        dfs(nrow, ncol, grid);
-                    }
-                }
-            }
+            grid[row][col] = color;
+            dfs(row, col + 1, n, grid);
+            grid[row][col] = -1; // backtrack
         }
     }
 
     int numOfWays(int n) {
-        vector < vector<int>> grid(n, vector<int>(3, -1));
-
-        for(int i = 0 ; i < 3 ; i++){
-            grid[0][0] = i;
-            dfs(0,0,grid);
-        }
-
+        vector<vector<int>> grid(n, vector<int>(3, -1));
+        dfs(0, 0, n, grid);
         return cnt;
     }
 };
+
 
 // optimal
 class Solution {
